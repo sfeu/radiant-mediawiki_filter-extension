@@ -1,0 +1,161 @@
+<p><a href="http://meta.wikimedia.org/wiki/Help:Editing" target="_blank">Mediawiki markup</a> is used most notably by <a href="http://www.wikipedia.org" target="_blank">Wikipedia</a>. Not all features of <a href="http://meta.wikimedia.org/wiki/Help:Editing" target="_blank">Mediawiki markup</a> are supported (yet), refer to the <a href="http://mediacloth.rubyforge.org" target="_blank">MediaCloth</a> documentation for details.</p>
+
+<table id="filter-reference-table" border="0" cellpadding="0" cellspacing="0">
+  <thead>
+    <tr>
+      <th>To see this:</th>
+      <th>Type this:</th>
+    <tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>bold</strong></td>
+      <td><pre>'''bold'''</pre></td>
+    </tr>
+    <tr>
+      <td><em>italics</em></td>
+      <td><pre>''italics''</pre></td>
+    </tr>
+    <tr>
+      <td><del>strikethrough</del></td>
+      <td><pre>&lt;del&gt;strikethrough&lt;/del&gt;</pre></td>
+    </tr>
+    <tr>
+      <td>x<sup>superscript</sup></td>
+      <td><pre>x&lt;sup&gt;superscript&lt;/sup&gt;</pre></td>
+    </tr>
+    <tr>
+      <td>a<sub>subscript</sub></td>
+      <td><pre>a&lt;sub&gt;subscript&lt;/sub&gt;</pre></td>
+    </tr>
+    <tr>
+      <td><code>code phrase</code></td>
+      <td><pre>&lt;code&gt;code phrase&lt;/code&gt;</pre></td>
+    </tr>
+    <tr>
+      <td>link to <a href="/my/page">my page</a></td>
+      <td><pre>link to [/my/page my page]</pre><small>Works only if <code>mediawiki_filter.enable_workarounds?</code> is set to <code>true</code>.</td>
+    </tr>
+    <tr>
+      <td>link to <a href="http://radiantcms.org" target="_blank">Radiant CMS</a></td>
+      <td><pre>link to [http://radiantcms.org Radiant CMS]</pre><small>Set <code>mediawiki_filter.add_blank?</code> to <code>false</code> if <b>no</b> new browser window should be opened for remote links.</small></td>
+    </tr>
+    <tr>
+      <td><acronym title="Just Another Acronym">JAA</acronym></td>
+      <td><pre>&lt;acronym title="Just Another Acronym"&gt;JAA&lt;/acronym&gt;</td>
+    </tr>
+    <tr>
+      <td><span style="color:red">Red Text</span></td>
+      <td><pre>&lt;span style="color:red"&gt;Red Text&lt;/span&gt;</pre></td>
+    </tr>
+    <tr>
+      <td>
+        <p>A bulleted list:</p>
+        <ul>
+          <li>item one</li>
+          <li>item two</li>
+          <li>item three</li>
+        </ul>
+      </td>
+      <td>
+<pre>A bulleted list:
+* item one
+* item two
+* item three</pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>A numbered list:</p>
+        <ol>
+          <li>item one</li>
+          <li>item two</li>
+          <li>item three</li>
+        </ol>
+      </td>
+      <td>
+<pre>A numbered list:
+# item one
+# item two
+# item three</pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>A definition list:</p>
+        <dl>
+          <dt>item one</dt>
+          <dd>description one</dd>
+          <dt>item two</dt>
+          <dd>description two</dd>
+        </dl>
+      </td>
+      <td>
+<pre>A definition list:
+;item one: description one
+;item two: description two</pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+      </td>
+      <td>
+<pre>==Heading 1==
+
+===Heading 2===
+
+====Heading 3====
+
+=====Heading 4=====</pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <table>
+        <thead>
+        <tr>
+          <th style="padding: 0 2em 0 0;">Header</th>
+          <th>Header</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        </tbody>
+        </table>
+      </td>
+      <td>
+<pre>{|
+!Header!!Header
+|-
+|Cell||Cell
+|-
+|Cell||Cell
+|}</pre>
+      </td>
+    </tr>
+    <tr>
+    <tr>
+      <td><tt>Preformatted text</tt></td>
+      <td><pre>&lt;pre&gt;Preformatted text&lt;/pre&gt;</pre></td>
+    </tr>
+    <tr>
+      <td><img src="/images/admin/page.png" alt="" /></td>
+      <td><pre>[[Image:page.png]]</pre><small>Works only if <code>mediawiki_filter.images_directory</code> is set. If an image with "_zoomed" prefix (page_zoomed.png in this case) is found, Lighthouse2 click-to-zoom code is rendered as well.</small></td>
+    </tr>
+    <tr>
+      <td><a href="/path/to/file.zip">download file.zip</a></td>
+      <td><pre>[[Media:file.zip|download file.zip]]</pre><small>Works only if <code>mediawiki_filter.media_directory</code> is set.</small></td>
+    </tr>
+  </tbody>
+</table>
