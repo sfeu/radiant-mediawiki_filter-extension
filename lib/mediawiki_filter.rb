@@ -1,4 +1,4 @@
-require 'mediacloth'
+require 'wikicloth'
 
 class MediawikiFilter < TextFilter
 
@@ -13,7 +13,13 @@ class MediawikiFilter < TextFilter
       :media_directory => Radiant::Config['mediawiki_filter.media_directory'] || nil,
       :enable_workarounds? => Radiant::Config['mediawiki_filter.enable_workarounds?'] || true
     }
-    MediaCloth::wiki_to_html(apply_workarounds(apply_enhancements(text)))
+   # MediaCloth::wiki_to_html(apply_workarounds(apply_enhancements(text)))
+    wiki = WikiCloth::Parser.new({
+    :data => apply_workarounds(apply_enhancements(text)),
+    :params => { } })
+
+    wiki.to_html
+
   end
 
   def apply_enhancements(text)

@@ -1,7 +1,7 @@
 class MediawikiFilterExtension < Radiant::Extension
-  version "0.2.0"
+  version "0.3.0"
   description "Adds support for Mediawiki markup."
-  url "http://www.bitcetera.com/en/products/mediawiki_filter"
+  url "https://github.com/sfeu/radiant-mediawiki_filter-extension"
   
   def activate
     MediawikiFilter

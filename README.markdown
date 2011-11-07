@@ -1,22 +1,23 @@
 Mediawiki Filter
 ================
 
-Created by Sven Schwyn, [Bitcetera](http://www.bitcetera.com).
-Inspired by the Markdown extension.
+Original filter created by Sven Schwyn, [Bitcetera](http://www.bitcetera.com).
+
+This branch uses the more actual wikicloth gem to filter the mediawiki markup.
 
 This Radiant extension adds support for Mediawiki markup.
 
 Installation
 ------------
 
-1. Install or update the [MediaCloth gem](http://mediacloth.rubyforge.org): 
+1. Install or update the [wikicloth gem](https://github.com/nricciar/wikicloth/):
 
-   $ gem install mediacloth
+   $ gem install wikicloth
 
 2. Install the extension:
 
    $ cd vendor/extensions
-   $ git clone git://github.com/svoop/radiant-mediawiki_filter-extension.git mediawiki_filter
+   $ git clone git://github.com/sfeu/radiant-mediawiki_filter-extension.git mediawiki_filter
 
 3. Restart the server
 
