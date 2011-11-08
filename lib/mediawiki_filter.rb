@@ -59,7 +59,7 @@ class MediawikiFilter < TextFilter
         :enable_workarounds? => Radiant::Config['mediawiki_filter.enable_workarounds?'] || true
     }
       # MediaCloth::wiki_to_html(apply_workarounds(apply_enhancements(text)))
-    wiki = WikiCloth.new({
+    wiki = WikiCloth::WikiCloth.new({
                                      :data => apply_workarounds(apply_enhancements(text)),
                                      :link_handler => MediaWikiFilterLinkHandler.new,
                                      :params => {}})
