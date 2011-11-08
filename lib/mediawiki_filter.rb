@@ -18,7 +18,7 @@ class MediawikiFilter < TextFilter
     :data => apply_workarounds(apply_enhancements(text)),
     :params => { } })
 
-    wiki.to_html
+    wiki.to_html({:noedit=>true})
 
   end
 
