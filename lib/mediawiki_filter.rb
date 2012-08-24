@@ -12,6 +12,7 @@ class MediaWikiFilterLinkHandler < WikiCloth::WikiLinkHandler
     title = ''
     ffloat = false
 
+    percent = false
     options.each do |x|
       case
         when ["miniatur", "thumb", "thumbnail", "frame", "border"].include?(x.strip)
@@ -21,6 +22,7 @@ class MediaWikiFilterLinkHandler < WikiCloth::WikiLinkHandler
           loc = x.strip
         when x.strip =~ /^([0-9]+)\s*%$/
           w = $1
+          percent = true
           css << "width:#{w}%"
         when x.strip =~ /^([0-9]+)\s*px$/
           w = $1
@@ -40,7 +42,7 @@ class MediaWikiFilterLinkHandler < WikiCloth::WikiLinkHandler
     sane_title = title.nil? ? "" : title.gsub(/<\/?[^>]*>/, "")
     if ["thumb", "thumbnail", "frame", "miniatur"].include?(type) # small fix here to include resource path for link as well.
       pre_img = '<div class="thumb t' + loc + '"><div class="thumbinner" style="width: ' + w.to_s +
-          'px;"><a href="'+resource+'" class="image" title="' + sane_title + '">'
+          (percent)?'px':'%'+';"><a href="'+resource+'" class="image" title="' + sane_title + '">'
       post_img = '</a><div class="thumbcaption">' + title + '</div></div></div>'
     end
     "#{pre_img}<img src=\"#{resource}\" alt=\"#{sane_title}\" title=\"#{sane_title}\" style=\"#{css.join(";")}\" />#{post_img}"
