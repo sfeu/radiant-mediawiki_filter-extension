@@ -19,6 +19,9 @@ class MediaWikiFilterLinkHandler < WikiCloth::WikiLinkHandler
         when ["left", "right", "center", "none"].include?(x.strip)
           ffloat = true
           loc = x.strip
+        when x.strip =~ /^([0-9]+)\s*%$/
+          w = $1
+          css << "width:#{w}%"
         when x.strip =~ /^([0-9]+)\s*px$/
           w = $1
           css << "width:#{w}px"
